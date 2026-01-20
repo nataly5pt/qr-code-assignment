@@ -61,24 +61,34 @@ body {
   line-height: 1.4;
   padding: 0 12px;
 }
-/* ==========================
-   Part 2 - Grid layout
-========================== */
+/* =========================
+   Part 2 - Grid layout page
+   ========================= */
 
-.grid {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(2, 320px);
-  gap: 30px;
-  padding: 40px;
-  justify-content: center;
+body.grid-page {
+  display: block;          /* cancels the Part 1 flex centering */
   min-height: 100vh;
+  background-color: hsl(212, 45%, 89%);
 }
 
-/* Mobile / small screen layout */
+/* UL as grid container */
+.grid {
+  list-style: none;        /* removes bullets */
+  padding: 40px;           /* removes default UL indent + adds spacing */
+  margin: 0;
+
+  display: grid;
+  grid-template-columns: repeat(2, 320px);  /* 2 columns on desktop */
+  gap: 30px;
+
+  justify-content: center; /* centers the whole grid */
+  align-content: start;    /* start at top so scrolling works naturally */
+}
+
+/* 1 column when < 1000px */
 @media (max-width: 1000px) {
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 320px;
   }
 }
 
