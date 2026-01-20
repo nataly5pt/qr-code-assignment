@@ -61,4 +61,24 @@ body {
   line-height: 1.4;
   padding: 0 12px;
 }
+/* ==========================
+   Part 2 - Grid layout
+========================== */
+
+.grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 320px);
+  gap: 30px;
+  padding: 40px;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Mobile / small screen layout */
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
 
